@@ -1,28 +1,34 @@
+<% content_for :title do %>
+<%= @entry.meal_type %> &ndash; <%= DateTime.now.to_s(:nice_date) %>
+<% end %>
+<div class="columns mt-6 is-centered"> 
+  <div class="column is-one-third">
+  <nav class="panel is-link">
+  <p class="panel-heading">
+    <%= @entry.meal_type %>
+  </p>
 
-<p>
-  <strong>Meal type:</strong>
-  <%= @entry.meal_type %>
-</p>
-
-<p>
-  <strong>Calories:</strong>
+  <div class="panel-block">
+  Calories:
   <%= @entry.calories %>
-</p>
+  </div>
 
-<p>
-  <strong>Proteins:</strong>
+  <div class="panel-block">
+  Proteins:
   <%= @entry.proteins %>
-</p>
+  </div>
 
-<p>
-  <strong>Carbohydrates:</strong>
+  <div class="panel-block">
+  Carbohydrates:
   <%= @entry.carbohydrates %>
-</p>
+  </div>
 
-<p>
-  <strong>Fats:</strong>
+  <div class="panel-block">
+  Fats:
   <%= @entry.fats %>
-</p>
+  </div>
+  </nav>
 
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', entries_path %>
+</div>
